@@ -4,7 +4,6 @@ import { Component } from "@angular/core";
     selector: 'ia-interview-insert',
     templateUrl: 'interview.component.html'
 })
-
 export class InterviewComponent {
-    intervieweeData = 'Dados do candidato';
+    
 }
