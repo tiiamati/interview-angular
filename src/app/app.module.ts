@@ -4,16 +4,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { InterviewComponent } from './interview-form/interview/interview.component';
-import { IntervieweeComponent } from './interview-form/interviewee/interviewee.component';
-import { EmployeeComponent } from './interview-form/employee/employee.component';
+import { InterviewComponent } from './interviews/interview/interview.component';
+import { IntervieweeComponent } from './interviewee/interviewee.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { InterviewListComponent } from './interviews/interview/interview-list.component';
+import { InterviewDetailedComponent } from './interviews/interview/interview-detailed.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InterviewComponent,
     IntervieweeComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    InterviewListComponent,
+    InterviewDetailedComponent
   ],
   imports: [
     BrowserModule,

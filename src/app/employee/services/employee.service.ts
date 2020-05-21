@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Employee } from '../employee';
 
 const URL = 'http://localhost:8089/api';
 
@@ -10,6 +11,6 @@ export class EmployeeService {
 
   listEmployee() {
     return this.http
-      .get<Object[]>(URL + '/employee');
+      .get<Employee[]>(URL + '/employee');
   }
 }

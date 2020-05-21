@@ -5,7 +5,8 @@ export interface Interviewee {
     city: string;
     curriculum: string;
     linkedin: string;
-    timeWorked: string;
+    timeWorkedInTheArea: string;
     cellphone: string;
+    email: string;
     
 }
