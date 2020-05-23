@@ -1,10 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { InterviewService } from './services/interview.service';
-import { Interview } from './interview';
+import { Component, OnInit } from '@angular/core';
+import { Interview } from '../interview';
+import { InterviewService } from '../services/interview.service';
 
 @Component({
     selector: 'ia-interview-list',
-    templateUrl: 'interview-list.component.html'
+    templateUrl: 'interview-list.component.html',
+    styleUrls: ['./interview-list.component.css']
 })
 export class InterviewListComponent implements OnInit{
     interviews: Interview[] = [];

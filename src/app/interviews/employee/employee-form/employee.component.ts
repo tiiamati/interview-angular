@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { EmployeeService } from './services/employee.service';
-import { Employee } from './employee';
+
+import { EmployeeService } from '../services/employee.service';
+import { Employee } from '../employee';
 
 @Component({
     selector: 'ia-employee-custom-select',

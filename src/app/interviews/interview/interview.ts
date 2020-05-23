@@ -1,4 +1,4 @@
-import { Interviewee } from 'src/app/interviewee/interviewee';
+import { Interviewee } from '../interviewee/interviewee';
 
 export interface Interview {
     id: number;
