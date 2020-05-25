@@ -22,8 +22,6 @@ export class InterviewDetailedComponent implements OnInit {
     ngOnInit(): void {
         const idEmployee = this.activatedRoute.snapshot.params.idEmployee;
 
-        console.log(idEmployee);
-
         this.interviewService
             .getInterview(idEmployee, this.idInterview)
             .subscribe(data => {

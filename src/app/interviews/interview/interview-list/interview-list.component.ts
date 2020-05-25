@@ -12,6 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 export class InterviewListComponent implements OnInit {
     interviews: Interview[] = [];
     show = [];
+    currentDate = new Date();
+    tomorrow =  new Date(new Date().setDate(new Date().getDate() + 1));
 
     showInterviewee(index) {
         if (this.show[index] == 'show') {
@@ -19,7 +21,12 @@ export class InterviewListComponent implements OnInit {
         } else {
             this.show[index] = 'show';
         }
-    };
+    }
+
+    filterData(data){
+        data = data.getFullYear() + '-' + ('0' + (data.getMonth() + 1)).slice(-2) + '-' + ('0' + data.getDate()).slice(-2);
+        return this.interviews.filter(x => x.date == data);
+    }
 
     constructor(
         private interviewService: InterviewService,
