@@ -7,9 +7,7 @@ import { IntervieweeComponent } from './interviewee/interviewee-form/interviewee
 import { EmployeeComponent } from './employee/employee-form/employee.component';
 import { InterviewListComponent } from './interview/interview-list/interview-list.component';
 import { InterviewDetailedComponent } from './interview/interview-detailed/interview-detailed.component';
-
-
-
+import { InterviewListCardComponent } from './interview/interview-list-card/interview-list-card.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +15,8 @@ import { InterviewDetailedComponent } from './interview/interview-detailed/inter
         IntervieweeComponent,
         EmployeeComponent,
         InterviewListComponent,
-        InterviewDetailedComponent
+        InterviewDetailedComponent,
+        InterviewListCardComponent
     ],
     exports: [],
     imports: [ 

@@ -1,14 +1,26 @@
 <div class="container">
-   <form>
+   <form [formGroup] = "form" (ngSubmit) = "onSubmit(form.value)">
       <div class="form-row">
          <div class="form-group col-md-4">
             <ia-employee-custom-select></ia-employee-custom-select>
          </div>
-         <div class="form-inline md-4">
-            <label for="dateInterview">Data da Entrevista:</label>
-            <input type="date" class="form-control" id="dateInterview">
+         <div class="form-group col-md-3">
+            <label for="date">Data da Entrevista:</label>
+            <input type="date" class="form-control" id="date">
+         </div>
+         <div class="form-group col-md-3">
+            <label for="hour">Horário:</label>
+            <input type="time" class="form-control" id="hour">
          </div>
       </div>
       <ia-interviewee-form></ia-interviewee-form>
+
+      <div class="form-group">
+         <label for="annotation">Anotações: </label>
+         <textarea class="form-control" id="annotation" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Cadastrar
+         Entrevista</button>
    </form>
 </div>

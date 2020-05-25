@@ -1,10 +1,4 @@
-
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-       <label class="input-group-text" for="inputGroupSelect01">{{ description }}</label>
-    </div>
-    <select class="custom-select">
-       <option selected>{{ optionSelected }}</option>
-       <option *ngFor="let employee of employees" value="{{ employee.id }}">{{ employee.name }}</option>
-    </select>
- </div>
+<label for="date">{{ description }}</label>
+<select class="form-control">
+   <option *ngFor="let employee of employees" value="{{ employee.id }}">{{ employee.name }}</option>
+</select>

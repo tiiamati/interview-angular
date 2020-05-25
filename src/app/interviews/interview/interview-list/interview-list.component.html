@@ -1,11 +1,10 @@
 <div class="container">
-    Hoje
+    <h4>Hoje</h4>
     <div id="accordion" *ngFor="let interview of filterData(currentDate); let i = index">
         <div class="card">
             <div class="card-header" id="collapseHeader_{{ i }}" (click)="showInterviewee(i)">
                 <h5 class="mb-0">
                     {{ interview.interviewee.name }}
-                    <span class="badge badge-primary badge-pill float-right">{{ interview.date }}</span>
                     <span class="badge badge-primary badge-pill float-right">{{ interview.hour }}</span>
                 </h5>
             </div>
@@ -18,13 +17,12 @@
         </div>
     </div>
 
-    Amanha
+    <h4>Amanha</h4>
     <div id="accordion" *ngFor="let interview of filterData(tomorrow); let i = index">
         <div class="card">
             <div class="card-header" id="collapseHeader_{{ i }}" (click)="showInterviewee(i)">
                 <h5 class="mb-0">
                     {{ interview.interviewee.name }}
-                    <span class="badge badge-primary badge-pill float-right">{{ interview.date }}</span>
                     <span class="badge badge-primary badge-pill float-right">{{ interview.hour }}</span>
                 </h5>
             </div>
@@ -36,5 +34,7 @@
             </div>
         </div>
     </div>
+
+    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="interviewForm();">Cadastrar Entrevista</button>
 
 </div>

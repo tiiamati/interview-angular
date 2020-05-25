@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { InterviewService } from '../services/interview.service';
 import { Interview } from '../interview';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'ia-interview-list',
@@ -28,9 +28,14 @@ export class InterviewListComponent implements OnInit {
         return this.interviews.filter(x => x.date == data);
     }
 
+    interviewForm(){
+            this.router.navigateByUrl('/interview/new');
+    }
+
     constructor(
         private interviewService: InterviewService,
-        private activatedRoute: ActivatedRoute
+        private activatedRoute: ActivatedRoute,
+        private router: Router
     ) { }
     
     ngOnInit(): void {
