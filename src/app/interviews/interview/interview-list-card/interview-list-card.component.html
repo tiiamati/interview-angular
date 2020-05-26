@@ -1,0 +1,16 @@
+<div id="accordion" *ngFor="let interview of interviews; let i = index">
+    <div class="card">
+        <div class="card-header" id="collapseHeader_{{ i }}" (click)="showInterview(i)">
+            <h5 class="mb-0">
+                {{ interview.interviewee.name }}
+                <span class="badge badge-primary badge-pill float-right">{{ interview.date }} / {{ interview.hour }}</span>
+            </h5>
+        </div>
+
+        <div id="collapseBody_{{ i }}" class="collapse {{ show[i] }}" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <ia-interview-detailed idInterview="{{interview.id}}"></ia-interview-detailed>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { InterviewService } from '../services/interview.service';
 import { Interview } from '../interview';
-import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
     selector: 'ia-interview-list',
@@ -11,25 +12,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class InterviewListComponent implements OnInit {
     interviews: Interview[] = [];
-    show = [];
     currentDate = new Date();
     tomorrow =  new Date(new Date().setDate(new Date().getDate() + 1));
 
-    showInterviewee(index) {
-        if (this.show[index] == 'show') {
-            this.show[index] = '';
+    filterData(data, data1?){
+        data = data.getFullYear() + '-' + ('0' + (data.getMonth() + 1)).slice(-2) + '-' + ('0' + data.getDate()).slice(-2);
+
+        if (data1) {
+            console.log("entrou em proximos");
+            return this.interviews.filter(x => x.date != data && x.date != data);
         } else {
-            this.show[index] = 'show';
+            return this.interviews.filter(x => x.date == data);
         }
     }
 
-    filterData(data){
-        data = data.getFullYear() + '-' + ('0' + (data.getMonth() + 1)).slice(-2) + '-' + ('0' + data.getDate()).slice(-2);
-        return this.interviews.filter(x => x.date == data);
-    }
-
     interviewForm(){
-            this.router.navigateByUrl('/interview/new');
+        this.router.navigateByUrl('/interview/new');
     }
 
     constructor(

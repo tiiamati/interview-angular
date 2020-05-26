@@ -1,40 +1,12 @@
-<div class="container">
+<div class="container mt-3">
     <h4>Hoje</h4>
-    <div id="accordion" *ngFor="let interview of filterData(currentDate); let i = index">
-        <div class="card">
-            <div class="card-header" id="collapseHeader_{{ i }}" (click)="showInterviewee(i)">
-                <h5 class="mb-0">
-                    {{ interview.interviewee.name }}
-                    <span class="badge badge-primary badge-pill float-right">{{ interview.hour }}</span>
-                </h5>
-            </div>
-
-            <div id="collapseBody_{{ i }}" class="collapse {{ show[i] }}" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                    <ia-interview-detailed idInterview="{{interview.id}}"></ia-interview-detailed>
-                </div>
-            </div>
-        </div>
-    </div>
+    <ia-interview-list-card [interviews]="filterData(currentDate)"></ia-interview-list-card>
 
     <h4>Amanha</h4>
-    <div id="accordion" *ngFor="let interview of filterData(tomorrow); let i = index">
-        <div class="card">
-            <div class="card-header" id="collapseHeader_{{ i }}" (click)="showInterviewee(i)">
-                <h5 class="mb-0">
-                    {{ interview.interviewee.name }}
-                    <span class="badge badge-primary badge-pill float-right">{{ interview.hour }}</span>
-                </h5>
-            </div>
+    <ia-interview-list-card [interviews]="filterData(tomorrow)"></ia-interview-list-card>
 
-            <div id="collapseBody_{{ i }}" class="collapse {{ show[i] }}" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                    <ia-interview-detailed idInterview="{{interview.id}}"></ia-interview-detailed>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h4>Próximos</h4>
+    <ia-interview-list-card [interviews]="filterData(currentDate, tomorrow)"></ia-interview-list-card>
 
     <button type="button" class="btn btn-primary btn-lg btn-block" (click)="interviewForm();">Cadastrar Entrevista</button>
-
 </div>

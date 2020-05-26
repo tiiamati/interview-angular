@@ -10,9 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class InterviewListCardComponent {
     @Input() interviews;
+    @Input() filter;
     show = [];
 
-    showInterviewee(index) {
+    showInterview(index) {
         if (this.show[index] == 'show') {
             this.show[index] = '';
         } else {
