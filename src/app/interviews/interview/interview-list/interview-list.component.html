@@ -1,12 +1,12 @@
 <div class="container mt-3">
     <h4>Hoje</h4>
-    <ia-interview-list-card [interviews]="filterData(currentDate)"></ia-interview-list-card>
+    <ia-interview-list-card [interviews]="interviews | interviewFilterByData: currentDate"></ia-interview-list-card>
 
     <h4>Amanha</h4>
-    <ia-interview-list-card [interviews]="filterData(tomorrow)"></ia-interview-list-card>
+    <ia-interview-list-card [interviews]="interviews | interviewFilterByData: tomorrow"></ia-interview-list-card>
 
     <h4>Próximos</h4>
-    <ia-interview-list-card [interviews]="filterData(currentDate, tomorrow)"></ia-interview-list-card>
+    <ia-interview-list-card [interviews]="interviews | interviewFilterUpcoming: tomorrow"></ia-interview-list-card>
 
     <button type="button" class="btn btn-primary btn-lg btn-block" (click)="interviewForm();">Cadastrar Entrevista</button>
 </div>

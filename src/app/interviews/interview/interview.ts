@@ -5,7 +5,7 @@ export interface Interview {
     id: number;
     interviewee: Interviewee;
     employee: Employee;
-    date: Date;
+    date: string;
     hour: string;
     important: boolean;
     annotation: string;

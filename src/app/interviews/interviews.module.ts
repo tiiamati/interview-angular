@@ -8,6 +8,8 @@ import { EmployeeComponent } from './employee/employee-form/employee.component';
 import { InterviewListComponent } from './interview/interview-list/interview-list.component';
 import { InterviewDetailedComponent } from './interview/interview-detailed/interview-detailed.component';
 import { InterviewListCardComponent } from './interview/interview-list-card/interview-list-card.component';
+import { InterviewFilterByData } from './interview/interview-list/interview-filter-by-data.pipe';
+import { InterviewFilterUpcoming } from './interview/interview-list/interview-filter-upcoming.pipe';
 
 @NgModule({
     declarations: [
@@ -16,7 +18,9 @@ import { InterviewListCardComponent } from './interview/interview-list-card/inte
         EmployeeComponent,
         InterviewListComponent,
         InterviewDetailedComponent,
-        InterviewListCardComponent
+        InterviewListCardComponent,
+        InterviewFilterByData,
+        InterviewFilterUpcoming
     ],
     exports: [],
     imports: [ 

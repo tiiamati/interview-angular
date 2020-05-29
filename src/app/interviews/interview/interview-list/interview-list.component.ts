@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as moment from 'moment';
 
 import { InterviewService } from '../services/interview.service';
 import { Interview } from '../interview';
@@ -12,19 +13,9 @@ import { Interview } from '../interview';
 })
 export class InterviewListComponent implements OnInit {
     interviews: Interview[] = [];
-    currentDate = new Date();
-    tomorrow =  new Date(new Date().setDate(new Date().getDate() + 1));
-
-    filterData(data, data1?){
-        data = data.getFullYear() + '-' + ('0' + (data.getMonth() + 1)).slice(-2) + '-' + ('0' + data.getDate()).slice(-2);
-
-        if (data1) {
-            console.log("entrou em proximos");
-            return this.interviews.filter(x => x.date != data && x.date != data);
-        } else {
-            return this.interviews.filter(x => x.date == data);
-        }
-    }
+    //currentDate = new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + new Date().getDate()).slice(-2);
+    currentDate = moment().format('YYYY-MM-DD');
+    tomorrow = moment().add(1, "days").format("YYYY-MM-DD");
 
     interviewForm(){
         this.router.navigateByUrl('/interview/new');
@@ -42,6 +33,5 @@ export class InterviewListComponent implements OnInit {
         this.interviewService
             .listInterview(idEmployee)
             .subscribe(i => this.interviews = i);
-            
     }
 }
