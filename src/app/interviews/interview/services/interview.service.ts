@@ -22,4 +22,9 @@ export class InterviewService {
       .get<Interview>(URL + '/interview/employee/' + idEmployee + '/' + idInterview);
   }
 
+  insertInterview(Interview: Interview) {
+    return this.http
+      .post<Interview>(URL + '/interview', JSON.stringify(Interview));
+  }
+
 }

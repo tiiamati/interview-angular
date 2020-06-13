@@ -1,13 +1,25 @@
+<div id="accordion" *ngIf="interviews?.length == 0">
+    <div class="card">
+        <div class="card-header alert-warning" id="collapseHeader" (click)="showInterview">
+            <h5 class="text-center text-muted">
+                Sem entrevistas hoje
+            </h5>
+        </div>
+    </div>
+</div>
+
 <div id="accordion" *ngFor="let interview of interviews; let i = index">
     <div class="card">
-        <div class="card-header" id="collapseHeader_{{ i }}" (click)="showInterview(i)">
+        <div class="card-header {{ interview.important ? 'alert-danger' : '' }}" id="collapseHeader_{{ i }}" (click)="showInterview(i)">
             <h5 class="mb-0">
                 {{ interview.interviewee.name }}
-                <span class="badge badge-primary badge-pill float-right">{{ interview.date }} / {{ interview.hour }}</span>
+                <span class="badge badge-primary badge-pill float-right">{{ interview.date }} /
+                    {{ interview.hour }}</span>
             </h5>
         </div>
 
-        <div id="collapseBody_{{ i }}" class="collapse {{ show[i] }}" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="collapseBody_{{ i }}" class="collapse {{ show[i] }}" aria-labelledby="headingOne"
+            data-parent="#accordion">
             <div class="card-body">
                 <ia-interview-detailed idInterview="{{interview.id}}"></ia-interview-detailed>
             </div>
